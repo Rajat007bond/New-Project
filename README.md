@@ -1,1 +1,25 @@
 # New-Project
+1. node:23-alpine3.20 → Uses a small, efficient Linux distribution (Alpine) with Node.js 23.
+AS builder → This names the stage so we can reference it later.
+
+2. WORKDIR /app → Creates and sets /app as the working directory
+
+3. COPY . . → Copies everything from your project into the container
+
+4. RUN npm install → Installs project dependencies inside the container.
+
+5. RUN npm run build → Runs build process: Generates optimized static files (HTML, CSS, JS) in the dist/ folder.
+
+
+Stage 2: Creating a Minimal Final Image
+
+1. gcr.io/distroless/nodejs18-debian12 → A Distroless image.
+
+2. WORKDIR /app → Ensures that serve runs inside the correct directory.
+
+3. COPY --from=builder /app/dist ./dist → Copies only the built React app from stage 1.
+   COPY --from=builder /app/node_modules ./node_modules → Copies installed dependencies
+
+4. EXPOSE 3000 - The application runs on the port 3000.
+
+5. CMD ["./node_modules/.bin/serve", "-s", "dist", "-l", "3000"] -> Runs serve from node_modules (installed via npm install).
