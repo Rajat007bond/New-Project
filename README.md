@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+Your local changes
 # Online Shop 🛍️ for Hackathon Phase 1
 [![Stars](https://img.shields.io/github/stars/iemafzalhassan/online_shop)](https://github.com/iemafzalhassan/online_shop)
 ![Forks](https://img.shields.io/github/forks/iemafzalhassan/online_shop)
@@ -199,7 +199,8 @@ For any questions or further information, please contact:
 Good luck for the hackathon
 
 Happy Learning :)
-=======
+
+Remote repository changes
 # New-Project
 1. node:23-alpine3.20 → Uses a small, efficient Linux distribution (Alpine) with Node.js 23.
 AS builder → This names the stage so we can reference it later.
@@ -225,4 +226,4 @@ Stage 2: Creating a Minimal Final Image
 4. EXPOSE 3000 - The application runs on the port 3000.
 
 5. CMD ["./node_modules/.bin/serve", "-s", "dist", "-l", "3000"] -> Runs serve from node_modules (installed via npm install).
->>>>>>> ec1c3163a255475f1b3f32d1338419dec49e66ad
+ ec1c3163a255475f1b3f32d1338419dec49e66ad
